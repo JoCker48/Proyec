@@ -3,38 +3,28 @@ include_once '../php/main.php';
 // Conectar a la base de datos
 $db = conexion();
 
-// Validar los datos del formulario
-if (isset($_POST['email']) && isset($_POST['password'])) {
-    $correo = $_POST['email'];
-    $contraseña = $_POST['password'];
+// Verificar si el formulario ha sido enviado
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $usuario = $_POST['usuario'];
+    $email = $_POST['email'];
+    $clave = password_hash($_POST['clave'], PASSWORD_DEFAULT);
 
-    // Validar el correo electrónico
-     if (!filter_var($correo, FILTER_VALIDATE_EMAIL)) {
-        echo '<p>Correo electrónico no válido.</p>';
-        exit;
-    }
+    // Verificar si el usuario o el correo ya existen
+    $sql = "SELECT * FROM usuarios WHERE usuario='$usuario' OR email='$email'";
+    $result = $db->query($sql);
 
-    // Encriptar la contraseña
-     $contraseñaEncriptada = password_hash($contraseña, PASSWORD_DEFAULT);
-
-    // Comprobar si el correo ya existe
-    $consulta = "SELECT * FROM usuarios_admin WHERE correo = '$correo'";
-    $resultado = $db->query($consulta);
-
-    if ($resultado->num_rows > 0) {
-        echo '<p>El correo electrónico ya está registrado.</p>';
-        exit;
-    }
-
-    // Registrar el usuario en la base de datos
-    $consulta = "INSERT INTO usuarios_admin (correo, contrasena) VALUES ('$correo', '$contraseñaEncriptada')";
-    $db->query($consulta);
-
-    if ($db->affected_rows == 1) {
-        echo "Usuario registrado con exito";
-        exit;
+    if ($result->num_rows > 0) {
+        echo "Error: El usuario o el correo ya están registrados.";
     } else {
-        header('Location: usuario_noregistrado.html');
-        exit;
+        // Insertar los datos si no existen
+        $sql = "INSERT INTO usuarios (usuario, email, clave) VALUES ('$usuario', '$email', '$clave')";
+        if ($db->query($sql) === TRUE) {
+            echo "Registro exitoso.";
+        } else {
+            echo "Error: " . $sql . "<br>" . $db->error;
+        }
     }
 }
+
+$db->close();
+?>
