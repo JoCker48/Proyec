@@ -2,7 +2,7 @@
 
 # Conexion a la base de datos #
 function conexion(){
-    $db = new mysqli('localhost', 'root', '', 'bd_cuentas');
+    $db = new mysqli('localhost', 'root', '', 'bdcajp');
     return $db;
 }
 
