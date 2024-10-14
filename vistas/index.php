@@ -28,6 +28,7 @@ include_once '../inc/head.php';?>
         include "../vistas/404.php";
     }
 
+    
 }
 ?>
 </body>
