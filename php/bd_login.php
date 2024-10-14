@@ -3,60 +3,51 @@ include_once '../php/main.php';
 // Conectar a la base de datos
 $db = conexion();
 
-// Validar el login
-if (isset($_POST['email']) && isset($_POST['password'])) {
-    $correo = $_POST['email'];
-    $contraseña = $_POST['password'];
+session_start();
+// Realiza la conexión con la base de datos
+include('Conex.php');
 
 
-    // Recuperar id
-    $consulta_id = "SELECT id_usuario FROM usuarios_admin WHERE correo = '$correo' ";
-    $resultado_id = $db->query($consulta_id);
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Sanitizar entrada de usuario
+    $usuario = htmlspecialchars(trim($_POST['usuario']));
+    $clave = $_POST['clave'];
 
-    $_SESSION['id']=$consulta_id;
+    // Preparar la consulta SQL
+    $sql = "SELECT * FROM usuarios WHERE usuario = ?";
+    $stmt = $db->prepare($sql);
 
-    // Recuperar la contraseña encriptada del usuario
-    $consulta = "SELECT contrasena FROM usuarios_admin WHERE correo = '$correo'";
-    $resultado = $db->query($consulta);
+    if ($stmt) {
+        $stmt->bind_param("s", $usuario);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
+        if ($result->num_rows > 0) {
+            // Verificar la contraseña
+            $row = $result->fetch_assoc();
+            if (password_verify($clave, $row['clave'])) {
+                // Almacenar el usuario y el estado en la sesión
+                $_SESSION['usuario'] = $usuario;
+                $_SESSION['status'] = $row['status'];
 
-    if ($resultado->num_rows == 1) {
-        $row = $resultado->fetch_assoc();
-        $contraseñaEncriptada = $row['contrasena'];
-
-        // Verificar la contraseña
-        if (password_verify($contraseña, $contraseñaEncriptada)) {
-
-            function generarIdAleatorioValido() {
-                // Generar un ID único
-                $id = uniqid('', true);
-            
-                // Filtrar el ID para permitir solo caracteres válidos
-                $caracteresValidos = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789,-';
-                return preg_replace('/[^' . $caracteresValidos . ']/', '', $id);
+                // Redireccionar según el estado del usuario
+                if ($row['status'] === '1') {
+                    header("Location: seccion1.php"); // Para usuarios administrador
+                } else {
+                    header("Location: seccion2.php"); // Para usuarios normales
+                }
+                exit();
+            } else {
+                echo "Usuario o contraseña incorrectos.";
             }
-            
-            // Ejemplo de uso:
-            $idAleatorio = generarIdAleatorioValido();
-            session_id($idAleatorio);
-            
-            // Iniciar la sesión del usuario
-            session_start();
-
-            $_SESSION['email'] = $correo;
-            $_SESSION['id']=$resultado_id;
-            
-
-
-            
-            // Redirigir a la página o aplicación correspondiente
-            header("Location: /index.php?vista=home");
-            exit;
-			
         } else {
-            echo '<p>Contraseña incorrecta.</p>';
+            echo "Usuario o contraseña incorrectos.";
         }
+        $stmt->close();
     } else {
-        echo '<p>Email no encontrado.</p>';
+        echo "Error en la consulta: " . $db->error;
     }
 }
+
+$db->close();
+?>
