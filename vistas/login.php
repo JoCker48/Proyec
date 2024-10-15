@@ -1,7 +1,6 @@
 <head>
     <title>Colegio Almirante José Padilla Zulia</title>
     <link rel="stylesheet" href="../css/login.css">
-
     <script>
         document.addEventListener('keydown', function(event) {
         if (event.key === 'ArrowUp' || event.key === 'ArrowDown') {event.preventDefault();}
