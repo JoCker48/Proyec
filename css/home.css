@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+	list-style: none;
+	text-decoration: none;
+    font-family: 'Segoe UI';
+}
+
+.titulo {
+    display: flex;
+    justify-content: center;
+
+}
+
+.cuerpo {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  
+  th {
+    background-color: #4CAF50;
+    color: white;
+  }
