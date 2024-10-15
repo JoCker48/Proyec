@@ -1,0 +1,6 @@
+CREATE TABLE pagos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    cedula VARCHAR(20) NOT NULL,
+    fechaP DATE NOT NULL,
+    statusP TINYINT(1) NOT NULL
+);
