@@ -31,10 +31,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION['status'] = $row['status'];
 
                 // Redireccionar según el estado del usuario
-                if ($row['status'] === '1') {
-                    header("Location: seccion1.php"); // Para usuarios administrador
+                if ($row['status'] == '1') {
+                    header("Location: ../vistas/seccion1.php"); // Para usuarios administrador
                 } else {
-                    header("Location: seccion2.php"); // Para usuarios normales
+                    header("Location: ../vistas/seccion2.php"); // Para usuarios normales
                 }
                 exit();
             } else {
