@@ -1,0 +1,9 @@
+CREATE TABLE alumnos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombres VARCHAR(100) NOT NULL,
+    apellidos VARCHAR(100) NOT NULL,
+    fecha_nacimiento DATE NOT NULL,
+    direccion VARCHAR(255),
+    nacionalidad VARCHAR(50),
+    sexo ENUM('M', 'F') NOT NULL
+);
