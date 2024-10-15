@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <h1>Colegio Almirante José Padilla Zulia</h1>
+        <h1>Colegio Almirante José.... Padilla Zulia</h1>
         <nav>
             <ul>
                 <li><a href="#home">Inicio</a></li>
