@@ -20,9 +20,8 @@ include_once './inc/head.php';?>
                     exit();
                 }
 
-            include './inc/navbar2.php';
+            include './inc/navbar.php';
             include "./vistas/".$_GET['vista'].".php";
-            include './inc/script.php';
 
         }else{
             if($_GET['vista']=="login"){

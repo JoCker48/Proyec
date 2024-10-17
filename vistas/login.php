@@ -41,12 +41,12 @@
             <h2>Registro</h2>
             <form action="../php/bd_register.php" method="post">
                 <label for="usuario">Usuario:</label>
-                <input type="text" id="usuario" name="usuario" required>
+                <input type="text" id="usuario" name="usuario" required autocomplete="off">
                 <label for="email">Correo Electrónico:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" required autocomplete="off">
                 <label for="clave">Clave:</label>
-                <input type="password" id="clave" name="clave" required>
-                <input type="submit" value="Registrarse">
+                <input type="password" id="clave" name="clave" required autocomplete="off">
+                <input type="submit" value="Rellenar Preguntas">
             </form>
         </section>
     </div>
