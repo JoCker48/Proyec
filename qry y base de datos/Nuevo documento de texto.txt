@@ -1,0 +1,15 @@
+                // Consulta SQL
+                $sql = "SELECT id_usuario, correo, contrasena FROM usuarios_admin";
+                $result = $conn->query($sql);
+
+                if ($result->num_rows > 0) {
+                   // echo '<link href="./css/home.css" type="text/css" rel="stylesheet">';
+                    echo "<table class='tabla'><tr><th>Id_Usuario</th><th>Correo</th><th>Contraseña</th></tr>";
+                    // Salida de datos de cada fila
+                    while($row = $result->fetch_assoc()) {
+                        echo "<tr><td>" . $row["id_usuario"]. "</td><td>" . $row["correo"]. "</td><td>" . $row["contrasena"]. "</td></tr>";
+                    }
+                    echo "</table>";
+                } else {
+                    echo "0 resultados";
+                }
