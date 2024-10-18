@@ -1,45 +1,21 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio de Sesión y Registro</title>
-    <link rel="stylesheet" href="styles2.css">
-</head>
+    <link rel="stylesheet" href="../css/stylesIN.css"><header>
+
+        <h1>Colegio Almirante José.... Padilla Zulia</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#inicio_sesion">Inicio de Sesión</a></li>
+                <li><a href="#registro">Registro</a></li>
+            </ul>
+        </nav>
+    </header>
+
 <body>
-     <section>
-        <h2>Formulario de Registro de Representante</h2>
-        <form action="procesar_registro.php" method="POST">
-            <label for="nombre">Nombre del Representante:</label>
-            <input type="text" id="nombre" name="nombre" required><br><br>
-
-            <label for="apellido">Apellido del Representante:</label>
-            <input type="text" id="apellido" name="apellido" required><br><br>
-
-            <label for="cedula">Cédula:</label>
-            <input type="text" id="cedula" name="cedula" required><br><br>
-
-            <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
-            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required><br><br>
-
-            <label for="direccion">Dirección:</label>
-            <textarea id="direccion" name="direccion" required></textarea><br><br>
-
-            <label for="nacionalidad">Nacionalidad:</label>
-            <input type="text" id="nacionalidad" name="nacionalidad" required><br><br>
-
-            <label for="sexo">Sexo:</label>
-            <select id="sexo" name="sexo" required>
-                <option value="Masculino">Masculino</option>
-                <option value="Femenino">Femenino</option>
-            </select><br><br>
-
-            <input type="submit" value="Registrar">
-        </form>
-    </section>
-
     <footer>
         <p>&copy; 2024 Colegio Almirante José Padilla Zulia</p>
     </footer>
-</body>
-</html>
+
+    </body>
