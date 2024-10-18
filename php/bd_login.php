@@ -5,7 +5,6 @@ $db = conexion();
 
 session_start();
 // Realiza la conexión con la base de datos
-include('Conex.php');
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
