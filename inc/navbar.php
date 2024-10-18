@@ -1,5 +1,5 @@
 <head>
-    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="../css/navbar.css">
 </head>
     <body>
         <header class="nav">
@@ -9,7 +9,7 @@
                     <li>
                     <a href="">Clientes</a>
                     <ul class="submenu">
-                        <li><a href="#">Clientes Pendientes</a></li>
+                        <li><a href="../vistas/registro_pagos.php">Registro de pagos</a></li>
                         <li><a href="#">Clientes Listos</a></li>
                         <li><a href="#">Categoría 3</a></li>
                     </ul>
@@ -17,7 +17,7 @@
                     <li>
                         <a href="">Registros</a>
                     <ul class="submenu">
-                        <li><a href="#">Clientes Registrados</a></li>
+                        <li><a href="../vistas/registro_alumno.php">Registro de alummno</a></li>
                         <li><a href="#">Analisis Hechos</a></li>
                         <li><a href="#">Categoría 3</a></li>
                     </ul>
