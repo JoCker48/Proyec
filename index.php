@@ -19,8 +19,8 @@ include_once './inc/head.php';?>
                     include "./php/cerrarsesion.php";
                     exit();
                 }
-
-            include './inc/navbar.php';
+            include './inc/detect_navbar.php';
+            
             include "./vistas/".$_GET['vista'].".php";
 
         }else{

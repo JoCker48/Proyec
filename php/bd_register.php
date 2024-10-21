@@ -9,15 +9,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $clave = password_hash($_POST['clave'], PASSWORD_DEFAULT);
 
-    header('Location: /index.php#registro_preguntas');
+
+    if (isset($usuario) && ($email) && ($clave)) {
+        header('Location: /index.php#registro_preguntas');
+    }
+
 
     $pregunta1 = $_POST['pregunta1'];
+    $respuesta1 = $_POST['respuesta1'];
     $pregunta2 = $_POST['pregunta2'];
+    $respuesta2 = $_POST['respuesta2'];
     $pregunta3 = $_POST['pregunta3'];
+    $respuesta3 = $_POST['respuesta3'];
 
-
-
-    // Verificar si el usuario o el correo ya existen
+    if (isset($pregunta1)&&($respuesta1)&&($pregunta2)&&($respuesta2)&&($pregunta3)&&($respuesta3)) {
+    
+        // Verificar si el usuario o el correo ya existen
     $sql = "SELECT * FROM usuarios WHERE usuario='$usuario' OR email='$email'";
     $result = $db->query($sql);
 
@@ -31,6 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             echo "Error: " . $sql . "<br>" . $db->error;
         }
+    }
     }
 }
 

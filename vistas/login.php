@@ -37,6 +37,17 @@
             </form>
         </section>
 
+        <section id="inicio_sesion_preguntas">
+            <h2>Inicio de Sesión</h2>
+            <form id="login-form" action="../php/bd_login.php" method="post">
+                <label for="usuario">Usuario:</label>
+                <input type="text" id="usuario" name="usuario" required>
+                <label for="clave">Clave:</label>
+                <input type="password" id="clave" name="clave" required>
+                <input type="submit" value="Iniciar Sesión">
+            </form>
+        </section>
+
         <section id="registro">
             <h2>Registro</h2>
             <form action="../php/bd_register.php" method="post">
@@ -47,6 +58,31 @@
                 <label for="clave">Clave:</label>
                 <input type="password" id="clave" name="clave" required autocomplete="off">
                 <input type="submit" value="Rellenar Preguntas">
+            </form>
+        </section>
+
+        <section id="registro_preguntas">
+            <h2>Registro</h2>
+            <form action="../php/bd_register.php" method="post">
+                <label for="pregunta1">Pregunta 1</label>
+                <input type="text" id="pregunta1" name="pregunta1" required autocomplete="off">
+
+                <label for="respuesta1">Respuesta</label>
+                <input type="text" id="respuesta1" name="respuesta1" required autocomplete="off">
+
+                <label for="pregunta2">Pregunta 2</label>
+                <input type="text" id="pregunta2" name="pregunta2" required autocomplete="off">
+
+                <label for="respuesta2">Respuesta</label>
+                <input type="text" id="respuesta2" name="respuesta2" required autocomplete="off">
+
+                <label for="pregunta3">Pregunta 3</label>
+                <input type="text" id="pregunta3" name="pregunta3" required autocomplete="off">
+
+                <label for="respuesta3">Respuesta</label>
+                <input type="text" id="respuesta3" name="respuesta3" required autocomplete="off">
+
+                <input type="submit" value="Registrarse">
             </form>
         </section>
     </div>

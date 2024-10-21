@@ -29,13 +29,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION['usuario'] = $usuario;
                 $_SESSION['status'] = $row['status'];
 
+                header("Location: /index.php?vista=home");
+
                 // Redireccionar según el estado del usuario
-                if ($row['status'] == '1') {
-                    header("Location: ../vistas/seccion1.php"); // Para usuarios administrador
+               /* if ($row['status'] == '1') {
+                    header("Location: /index.php?vista=seccion1"); // Para usuarios administrador
                 } else {
-                    header("Location: ../vistas/seccion2.php"); // Para usuarios normales
+                    header("Location: /index.php?vista=seccion2"); // Para usuarios normales
                 }
-                exit();
+                exit();*/
             } else {
                 echo "Usuario o contraseña incorrectos.";
             }
