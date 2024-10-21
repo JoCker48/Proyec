@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     if (isset($usuario) && ($email) && ($clave)) {
-        header('Location: /index.php#registro_preguntas');
+        header('Location: /index.php?vista=login#registro_preguntas');
     }
 
 

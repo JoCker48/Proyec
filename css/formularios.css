@@ -1,0 +1,58 @@
+
+.rebody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 89vh;
+  width: 100%;
+}
+
+.formulario{
+  padding-bottom: 50pxpx;
+}
+
+
+  h2 {
+    color: #333;
+  }
+  /* styles del formulario */
+  
+  
+  
+  form{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  
+  
+  form input, select {
+    width: 60vh;
+    padding: 0.5rem;
+    margin-bottom: 0.2rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  form input[type="submit"] {
+    background-color: #87CEEB;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 0.7rem;
+  }
+  
+  form input[type="submit"]:hover {
+    background-color: #87CEEB;
+  }
+  
+  footer {
+    background-color: #87CEEB;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+  }
+  

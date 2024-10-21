@@ -31,8 +31,6 @@ include_once './inc/head.php';?>
             }else{
                 include "./vistas/404.php";
             }
-
-            
         }
         ?>
 </body>
