@@ -11,7 +11,7 @@ body {
 }
 
 section {
-  height: 85vh;
+  height: 88vh;
   margin-left: 20vh;
   width: 80%;
   scroll-snap-align: start;
@@ -42,7 +42,7 @@ form label {
 
 form input {
   width: 40vh; /* Más delgado */
-  padding: 0.3rem;
+  padding: 0.1rem;
   margin-bottom: 1rem;
   border: 1px solid #ccc;
   border-radius: 4px;
