@@ -17,12 +17,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $pregunta1 = $_POST['pregunta1'];
     $respuesta1 = $_POST['respuesta1'];
-    $pregunta2 = $_POST['pregunta2'];
-    $respuesta2 = $_POST['respuesta2'];
-    $pregunta3 = $_POST['pregunta3'];
-    $respuesta3 = $_POST['respuesta3'];
 
-    if (isset($pregunta1)&&($respuesta1)&&($pregunta2)&&($respuesta2)&&($pregunta3)&&($respuesta3)) {
+    if (isset($pregunta1)&&($respuesta1)) {
     
         // Verificar si el usuario o el correo ya existen
     $sql = "SELECT * FROM usuarios WHERE usuario='$usuario' OR email='$email'";

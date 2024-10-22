@@ -15,7 +15,7 @@
                 <label for="fechaP">Fecha del Pago:</label><br>
                 <input type="date" id="fechaP" name="fechaP" required><br><br>
 
-                <label for="statusP">Estado del Pago (1 = Completado, 0 = Pendiente):</label><br>
+                <label for="statusP">Estado del Pago:</label><br>
                 <select id="statusP" name="statusP" required>
                     <option value="1">Completado</option>
                     <option value="0">Pendiente</option>

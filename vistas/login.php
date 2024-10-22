@@ -70,18 +70,6 @@
                 <label for="respuesta1">Respuesta</label>
                 <input type="text" id="respuesta1" name="respuesta1" required autocomplete="off">
 
-                <label for="pregunta2">Pregunta 2</label>
-                <input type="text" id="pregunta2" name="pregunta2" required autocomplete="off">
-
-                <label for="respuesta2">Respuesta</label>
-                <input type="text" id="respuesta2" name="respuesta2" required autocomplete="off">
-
-                <label for="pregunta3">Pregunta 3</label>
-                <input type="text" id="pregunta3" name="pregunta3" required autocomplete="off">
-
-                <label for="respuesta3">Respuesta</label>
-                <input type="text" id="respuesta3" name="respuesta3" required autocomplete="off">
-
                 <input type="submit" value="Registrarse">
             </form>
         </section>
