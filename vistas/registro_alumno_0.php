@@ -2,36 +2,39 @@
 <html lang="es">
 <head>
     <title>Registro de Alumnos</title>
-    <link rel="stylesheet" href="/css/registro_alumno_0.css">
+    <link rel="stylesheet" href="/css/formularios.css">
 </head>
 <body>
+    <div class="rebody">
     <h2>Formulario de Registro de Alumnos</h2>
-    <form action="insertar_alumno.php" method="POST">
-        <label for="nombres">Nombres:</label><br>
-        <input type="text" id="nombres" name="nombres" required><br><br>
+        <form action="insertar_alumno.php" method="POST">
+            <div class="formulario">
+                <label for="nombres">Nombres:</label><br>
+                <input type="text" id="nombres" name="nombres" required><br><br>
 
-        <label for="apellidos">Apellidos:</label><br>
-        <input type="text" id="apellidos" name="apellidos" required><br><br>
+                <label for="apellidos">Apellidos:</label><br>
+                <input type="text" id="apellidos" name="apellidos" required><br><br>
 
-        <label for="fecha_nacimiento">Fecha de Nacimiento:</label><br>
-        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required><br><br>
+                <label for="fecha_nacimiento">Fecha de Nacimiento:</label><br>
+                <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required><br><br>
 
-        <label for="direccion">Dirección:</label><br>
-        <input type="text" id="direccion" name="direccion"><br><br>
+                <label for="direccion">Dirección:</label><br>
+                <input type="text" id="direccion" name="direccion"><br><br>
 
-        <label for="nacionalidad">Nacionalidad:</label><br>
-        <input type="text" id="nacionalidad" name="nacionalidad"><br><br>
+                <label for="nacionalidad">Nacionalidad:</label><br>
+                <input type="text" id="nacionalidad" name="nacionalidad"><br><br>
 
-        <label for="sexo">Sexo:</label><br>
-        <select id="sexo" name="sexo" required>
-            <option value="M">Masculino</option>
-            <option value="F">Femenino</option>
-        </select><br><br>
+                <label for="sexo">Sexo:</label><br>
+                <select id="sexo" name="sexo" required>
+                    <option value="M">Masculino</option>
+                    <option value="F">Femenino</option>
+                </select><br><br>
 
-        <label for="cedula_representante">Cédula del Representante:</label><br>
-        <input type="number" id="cedula_representante" name="cedula_representante" required><br><br>
-
-        <input type="submit" value="Registrar Alumno">
-    </form>
+                <label for="cedula_representante">Cédula del Representante:</label><br>
+                <input type="number" id="cedula_representante" name="cedula_representante" required><br><br>
+            </div>
+            <input type="submit" value="Registrar Alumno">
+        </form>
+    </div>
 </body>
 </html>

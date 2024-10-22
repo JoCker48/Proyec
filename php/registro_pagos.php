@@ -11,7 +11,7 @@ $statusP = $_POST['statusP'];
 
 // Insertar los datos en la tabla pagos
 $sql = "INSERT INTO pagos (cedula, fechaP, statusP)
-VALUES ($cedula, '$fechaP', $statusP)";
+VALUES ('$cedula', '$fechaP', '$statusP')";
 
 if ($db->query($sql) === TRUE) {
     echo "Pago registrado exitosamente.";
@@ -20,4 +20,4 @@ if ($db->query($sql) === TRUE) {
 }
 
 $db->close();
-?>
+

@@ -11,7 +11,7 @@ body {
 }
 
 section {
-  height: 80vh;
+  height: 85vh;
   margin-left: 20vh;
   width: 80%;
   scroll-snap-align: start;
@@ -28,23 +28,21 @@ section {
 h2 {
   color: #333;
 }
-/* styles del formulario */
 
+/* Estilos del formulario */
 
-
-form{
+form {
   display: flex;
   flex-direction: column;
 }
-
 
 form label {
   margin: 0.5rem 0 0.2rem;
 }
 
 form input {
-  width: 60vh;
-  padding: 0.5rem;
+  width: 40vh; /* Más delgado */
+  padding: 0.3rem;
   margin-bottom: 1rem;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -61,7 +59,6 @@ form input[type="submit"] {
 form input[type="submit"]:hover {
   background-color: #87CEEB;
 }
-
 
 nav {
   position: fixed;
@@ -86,7 +83,6 @@ nav li a {
   padding: 0.5rem;
   border-bottom: 2px solid transparent;
 }
-
 
 
 footer {

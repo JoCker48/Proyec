@@ -57,20 +57,12 @@
                 <input type="email" id="email" name="email" required autocomplete="off">
                 <label for="clave">Clave:</label>
                 <input type="password" id="clave" name="clave" required autocomplete="off">
+                <label for="pregunta">Pregunta</label>
+                <input type="text" id="pregunta" name="pregunta" required autocomplete="off">
+                <label for="respuesta">Respuesta</label>
+                <input type="text" id="respuesta" name="respuesta" required autocomplete="off">
+
                 <input type="submit" value="Rellenar Preguntas">
-            </form>
-        </section>
-
-        <section id="registro_preguntas">
-            <h2>Registro</h2>
-            <form action="../php/bd_register.php" method="post">
-                <label for="pregunta1">Pregunta 1</label>
-                <input type="text" id="pregunta1" name="pregunta1" required autocomplete="off">
-
-                <label for="respuesta1">Respuesta</label>
-                <input type="text" id="respuesta1" name="respuesta1" required autocomplete="off">
-
-                <input type="submit" value="Registrarse">
             </form>
         </section>
     </div>
