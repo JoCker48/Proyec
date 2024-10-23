@@ -7,7 +7,7 @@
 <body>
     <div class="rebody">
     <h2>Formulario de Registro de Alumnos</h2>
-        <form action="insertar_alumno.php" method="POST">
+        <form action="../php/registro_alumno.php" method="POST">
             <div class="formulario">
                 <label for="nombres">Nombres:</label><br>
                 <input type="text" id="nombres" name="nombres" required><br><br>
