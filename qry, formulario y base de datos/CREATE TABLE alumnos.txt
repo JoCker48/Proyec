@@ -6,4 +6,5 @@ CREATE TABLE alumnos (
     direccion VARCHAR(255),
     nacionalidad VARCHAR(50),
     sexo ENUM('M', 'F') NOT NULL
+    cedula_representante int(11)
 );
