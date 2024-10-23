@@ -6,9 +6,9 @@
 </head>
 <body>
     <div class="rebody">
-    <h2>Formulario de Registro de Pagos</h2>
-        <form action="insertar_pago.php" method="POST">
-            <div class="formulario">
+        <h2>Formulario de Registro de Pagos</h2>
+        <form action="../php/registro_pagos.php" method="POST">
+            <div class="formularios">
                 <label for="cedula">Cédula del Representante:</label><br>
                 <input type="number" id="cedula" name="cedula" required><br><br>
 
