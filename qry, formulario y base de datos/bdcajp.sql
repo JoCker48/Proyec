@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-10-2024 a las 01:16:24
+-- Tiempo de generación: 24-10-2024 a las 01:33:22
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -35,7 +35,7 @@ CREATE TABLE `alumnos` (
   `direccion` varchar(255) DEFAULT NULL,
   `nacionalidad` varchar(50) DEFAULT NULL,
   `sexo` enum('M','F') NOT NULL,
-  `cedula_representante` bigint(10) NOT NULL
+  `cedula` int(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -46,17 +46,10 @@ CREATE TABLE `alumnos` (
 
 CREATE TABLE `pagos` (
   `id` int(11) NOT NULL,
-  `cedula` bigint(10) NOT NULL,
+  `cedula` int(10) NOT NULL,
   `fechaP` date NOT NULL,
   `statusP` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `pagos`
---
-
-INSERT INTO `pagos` (`id`, `cedula`, `fechaP`, `statusP`) VALUES
-(4, 16467922, '2024-10-21', 1);
 
 -- --------------------------------------------------------
 
@@ -68,19 +61,12 @@ CREATE TABLE `representantes` (
   `id` int(11) NOT NULL,
   `nombre` varchar(50) NOT NULL,
   `apellido` varchar(50) NOT NULL,
-  `cedula` bigint(10) NOT NULL,
+  `cedula` int(10) NOT NULL,
   `fecha_nacimiento` date NOT NULL,
   `direccion` text NOT NULL,
   `nacionalidad` varchar(30) NOT NULL,
   `sexo` enum('Masculino','Femenino') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `representantes`
---
-
-INSERT INTO `representantes` (`id`, `nombre`, `apellido`, `cedula`, `fecha_nacimiento`, `direccion`, `nacionalidad`, `sexo`) VALUES
-(1, 'carlos', 'valbuena', 16467922, '2024-10-21', 'cac', 'venezolano', 'Masculino');
 
 -- --------------------------------------------------------
 
@@ -99,13 +85,6 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `usuarios`
---
-
-INSERT INTO `usuarios` (`id`, `usuario`, `email`, `clave`, `status`, `pregunta`, `respuesta`) VALUES
-(3, 'carlos', 'omegrex@gmail.com', '$2y$10$n2OtHnyglG9LvGGO4Qwuz.vV6tsJey2v1OUMuLFcXzfEePXuEo8hC', 0, 'como se llama mi perra', 'susan');
-
---
 -- Índices para tablas volcadas
 --
 
@@ -113,22 +92,19 @@ INSERT INTO `usuarios` (`id`, `usuario`, `email`, `clave`, `status`, `pregunta`,
 -- Indices de la tabla `alumnos`
 --
 ALTER TABLE `alumnos`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_alumnos_representantes` (`cedula_representante`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `pagos`
 --
 ALTER TABLE `pagos`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_pagos_representantes` (`cedula`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `representantes`
 --
 ALTER TABLE `representantes`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `cedula` (`cedula`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `usuarios`
@@ -150,35 +126,19 @@ ALTER TABLE `alumnos`
 -- AUTO_INCREMENT de la tabla `pagos`
 --
 ALTER TABLE `pagos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `representantes`
 --
 ALTER TABLE `representantes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- Restricciones para tablas volcadas
---
-
---
--- Filtros para la tabla `alumnos`
---
-ALTER TABLE `alumnos`
-  ADD CONSTRAINT `fk_alumnos_representantes` FOREIGN KEY (`cedula_representante`) REFERENCES `representantes` (`cedula`);
-
---
--- Filtros para la tabla `pagos`
---
-ALTER TABLE `pagos`
-  ADD CONSTRAINT `fk_pagos_representantes` FOREIGN KEY (`cedula`) REFERENCES `representantes` (`cedula`);
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
