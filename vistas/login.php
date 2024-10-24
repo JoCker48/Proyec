@@ -62,7 +62,7 @@
                 <label for="respuesta">Respuesta</label>
                 <input type="text" id="respuesta" name="respuesta" required autocomplete="off">
 
-                <input type="submit" value="Rellenar Preguntas">
+                <input type="submit" value="Registrarse">
             </form>
         </section>
     </div>
