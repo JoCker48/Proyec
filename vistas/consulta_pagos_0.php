@@ -3,6 +3,7 @@
     <link rel="stylesheet" href="../css/botones.css">
 </head>
 <body>
+    
     <div class="rebody">
 
         <div class="tabla">
