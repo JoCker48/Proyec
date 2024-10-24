@@ -32,7 +32,7 @@ $sql = "SELECT id, cedula, fechaP, statusP FROM pagos LIMIT $start_from, $result
 $result = $db->query($sql);
 
 if ($result->num_rows > 0) {
-    echo "<table class='tabla'><tr><th>ID</th><th>Cédula</th><th>Fecha de Pago</th><th>Status de Pago</th><th>Acciones</th></tr>";
+    echo "<table class='tabla'><tr><th>ID</th><th>Cédula</th><th>Fecha de Pago</th><th>Status de Pago</tr>";
 
     // Iterar sobre las filas de resultados
     while($row = $result->fetch_assoc()) {
@@ -43,10 +43,6 @@ if ($result->num_rows > 0) {
             <td>" . htmlspecialchars($row["cedula"]). "</td>
             <td>" . htmlspecialchars($row["fechaP"]). "</td>
             <td>" . htmlspecialchars($status). "</td>
-            <td>
-                <a href='editar.php?id=" . htmlspecialchars($row["id"]) . "'>Editar</a> |
-                <a href='eliminar.php?id=" . htmlspecialchars($row["id"]) . "' onclick='return confirm(\"¿Estás seguro de eliminar este registro?\")'>Eliminar</a>
-            </td>
         </tr>";
     }
     echo "</table>";

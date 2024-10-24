@@ -4,9 +4,7 @@
 </head>
 <body>
     <div class="rebody">
-        <div class="crud-botones">
-            <button class="btn actualizar">Actualizar</button>
-        </div>
+
         <div class="tabla">
             <?php include './php/consulta_pago.php';?>
         </div>

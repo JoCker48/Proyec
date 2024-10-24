@@ -31,7 +31,7 @@ table {
 /* Estilos para la paginación debajo de la tabla */
 .pagination {
   text-align: center; /* Centrar la paginación */
-  margin-top: 230px; /* Espacio por encima de la paginación */
+  margin-top: 340px; /* Espacio por encima de la paginación */
 }
 
 .pagination-item {
