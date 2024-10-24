@@ -5,18 +5,13 @@
 <?php
 include_once './php/main.php';
 // Conectar a la base de datos
-// Conectar a la base de datos
 $db = conexion();
 
 // Definir el número de resultados por página
-$results_per_page = 10; // Cambia este número según lo que necesites
+$results_per_page = 10; // Cambiar a 10
 
 // Saber en qué página está el usuario
-if (isset($_GET['page'])) {
-    $page = $_GET['page'];
-} else {
-    $page = 1;
-}
+$page = isset($_GET['page']) ? $_GET['page'] : 1;
 
 // Calcular el número inicial de resultados para la consulta SQL
 $start_from = ($page - 1) * $results_per_page;
@@ -32,12 +27,9 @@ if ($row_total) {
     $total_pages = ceil($total_records / $results_per_page); // Número total de páginas
 }
 
-// Consultar con paginación
-$sql = "SELECT id, cedula, fechaP, statusP FROM pagos LIMIT ?, ?";
-$stmt = $db->prepare($sql);
-$stmt->bind_param("ii", $start_from, $results_per_page);
-$stmt->execute();
-$result = $stmt->get_result();
+// Consultar con paginación (sin bind_param)
+$sql = "SELECT id, cedula, fechaP, statusP FROM pagos LIMIT $start_from, $results_per_page";
+$result = $db->query($sql);
 
 if ($result->num_rows > 0) {
     echo "<table class='tabla'><tr><th>ID</th><th>Cédula</th><th>Fecha de Pago</th><th>Status de Pago</th><th>Acciones</th></tr>";
@@ -74,5 +66,4 @@ if (isset($total_pages) && $total_pages > 1) {
 } else {
     echo "<p>No hay más páginas disponibles.</p>";
 }
-
 ?>
