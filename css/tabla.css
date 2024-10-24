@@ -1,6 +1,7 @@
 table {
     border-collapse: collapse;
     width: 100%;
+    padding-top: 20px;
   }
   
   th, td {
@@ -14,3 +15,38 @@ table {
     background-color: #4CAF50;
     color: white;
   }
+ /* Estilos para la tabla */
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px; /* Espacio entre la tabla y la paginación */
+}
+
+.tabla th, .tabla td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+/* Estilos para la paginación debajo de la tabla */
+.pagination {
+  text-align: center; /* Centrar la paginación */
+  margin-top: 230px; /* Espacio por encima de la paginación */
+}
+
+.pagination-item {
+  display: inline-block;
+  margin: 5px;
+}
+
+.pagination-item a {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.pagination-item a:hover {
+  background-color: #0056b3;
+}
